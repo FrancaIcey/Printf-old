@@ -1,29 +1,46 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
-#include "main.h"
-
-void print_buffer(char buffer[], int *buff_ind);
+#include <stdlib.h>
+#include <stdarg.h>
+#include <limits.h>
+#include <unistd.h>
 
 /**
- * _printf - Printf function
- * @format: format.
- * Return: Printed chars.
+ * struct format - match the conversion specifiers for printf
+ * @id: type char pointer of the specifier i.e (l,h) for (d,i,u,o,x,X)
+ * @f: type pointer to function for the conversion specifier
+ *
  */
-int _printf(const char *format, ...)
+
+typedef struct format
 {
-	int i, printed = 0, printed_chars = 0;
-	int flags, width, precision, size, buff_ind = 0;
-	va_list list;
-	char buffer[BUFF_SIZE];
+	char*id;
+	int(*f)();
+}convert_match;
 
-	if (format == NULL)
-		return (-1);
+int printf_pointer(va_list val);
+int printf_hex_aux(unsigned long int num);
+int printf_HEX_aux(unsigned int num);
+int printf_exclusive_string(va_list val);
+int printf_HEX(va_list val);
+int printf_hex(va_list val);
+int printf_oct(va_list val);
+int printf_unsigned(va_list args);
+int printf_bin(va_list val);
+int printf_srev(va_list args);
+int printf_rot13(va_list args);
+int printf_int(va_list args);
+int printf_dec(va_list args);
+int strlen(char*s);
+int*_strpy(char*dest,char*src);
+int_strlenc(const char*s);
+int rev_string(char*s);
+int strlenc(const char*s);
+int printf_37(void);
+int printf_char(va_list val);
+int pfrintf_string(va_list val);
+int_putchar(char c);
+int_pfintf(const char*format, ...);
 
-	va_start(list, format);
-
-	for (i = 0; format && format[i] != '\0'; i++)
-	{
-		if (format[i] != '%')
-		{
-			buffer[buff_ind++] = format[i];
+#endif
