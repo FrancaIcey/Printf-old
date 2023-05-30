@@ -60,7 +60,4 @@ ring
 Handle the following custom conversion specifier:                                   
                                                                                     
 15. *                                                                               
-All the above options work well together. 
-
-=======
-a group project done by Angel and Franca
+All the above options work well together.
