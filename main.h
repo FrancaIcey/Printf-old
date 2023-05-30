@@ -38,7 +38,7 @@ struct fmt
  */
 typedef struct fmt fmt_t;
 
-int_print(const char *format, ...);
+int_printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
