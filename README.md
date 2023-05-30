@@ -1,4 +1,4 @@
-Team Project "Printf" done by Angel and Franca
+Team Project "Printf"
 0x11. C - printf team project
 
 Group Project:                                                                      
@@ -62,3 +62,5 @@ Handle the following custom conversion specifier:
 15. *                                                                               
 All the above options work well together. 
 
+=======
+a group project done by Angel and Franca
